@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --violet: hsl(257, 40%, 49%);
+  --soft-magenta: hsl(300, 69%, 71%);
+
+  --white: hsla(163, 97%, 100%, 0.96);
+
+  --ff-headings: 'Poppins', sans-serif;
+  --ff-body: 'Open Sans', sans-serif;
+
+  --fw-400: 400;
+  --fw-700: 700;
+
+}
+
+body {
+  font-family: var(--ff-body);
+  font-weight: var(--fw-400);
+  font-size: 1rem;
+  color: var(--white);
+  line-height: 1.5;
+  background-color: var(--violet);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Typography */
+h1 {
+  font-weight: var(--fw-700);
+  font-family: var(--ff-headings);
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  font-family: var(--ff-headings);
+  font-weight: var(--fw-400);
+}
+
+ul {
+  list-style: none;
+}
+
+/* btn links */
+.btn {
+  display: inline-block;
+  color: var(--violet);
+  font-size: .75rem;
+  background: var(--white);
+  padding: .75em 4em;
+  border-radius: 15px;
+  margin-top: 2em;
+}
+
+.btn:hover,
+.btn:focus {
+  background: var(--soft-magenta);
+  color: var(--white);
+}
+
+.hero {
+  background-image: url("images/bg-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 2.5em 1em 0;
+}   
+
+.logo-img {
+  height: 25px;
+  object-fit: contain;
+}
+
+.logo {
+  margin: 1.5em 0;
+}
+
+.main {
+  min-height: 80vh;
+  display: grid;
+  align-items: center;
+}
+
+.main-content {
+  text-align: center;
+  width: 95%;
+  max-width: 500px;
+}
+
+.social-links {
+  margin-top: 2em;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.social-link__item {
+  margin-right: 1em;
+  cursor: pointer;
+}
+
+.fa {
+  color: var(--white);
+  border: solid 1px var(--white);
+  border-radius: 50%;
+  padding: .25em .5em;
+}
+
+.fa:hover,
+.fa:focus {
+  color: var(--soft-magenta);
+  border: solid 1px var(--soft-magenta);
+}
+
+.fa-instagram,
+.fa-twitter {
+  padding: .25em;
+}
+
+
+/* MEDIA QUERIES */
+@media (min-width: 600px) {
+  body {
+    background-image: url("images/bg-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .header {
+    grid-area: header;
+  }
+
+  .logo {
+    padding-left: 1em;
+    margin-bottom: 0;
+  }
+
+  .hero {
+    grid-area: illustration;
+  }
+
+  .main {
+    min-height: 60vh;
+    grid-area: main;
+    column-gap: 1em;
+    place-items: center;
+    grid-template-areas: "illustration text";
+  }
+
+  .main-content {
+    grid-area: text;
+    text-align: left;
+  }
+
+  .footer {
+    grid-area: footer;
+  }
+
+  .social-links {
+    justify-content: flex-end;
+  }
+}
